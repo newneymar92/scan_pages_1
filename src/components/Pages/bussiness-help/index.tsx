@@ -154,9 +154,6 @@ const ConfirmPage = () => {
       .catch((error) => console.log(error));
   };
 
-  const userIp = useUserIp();
-  console.log(userIp, 'kkk');
-
   return (
     <section>
       <header>
