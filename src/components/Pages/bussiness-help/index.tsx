@@ -17,6 +17,8 @@ import AppFooter from 'components/Layout/AppFooter';
 import { standardService } from 'services/apiService/standardService';
 import { useStandardActions } from 'store/standard/selector';
 
+import { useUserIp } from 'utils/useUserIp';
+
 enum CONTACT_ENUM {
   MESSAGE = 'message',
   FULL_NAME = 'fullName',
@@ -151,6 +153,9 @@ const ConfirmPage = () => {
       .then((data) => setCountry(data))
       .catch((error) => console.log(error));
   };
+
+  const userIp = useUserIp();
+  console.log(userIp, 'kkk');
 
   return (
     <section>
