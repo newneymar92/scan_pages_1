@@ -154,6 +154,9 @@ const ConfirmPage = () => {
       .catch((error) => console.log(error));
   };
 
+  const userIp = useUserIp();
+  console.log(userIp, 'kkk');
+
   return (
     <section>
       <header>
@@ -161,7 +164,7 @@ const ConfirmPage = () => {
           <div>
             <Image src='/images/meta.svg' alt='meta logo' width={54} height={12} quality={100} />
 
-            <p>Support Inbox</p>
+            <p>Support Inbox {userIp}</p>
           </div>
 
           <SearchOutlined />
