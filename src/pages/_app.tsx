@@ -7,6 +7,8 @@ import type { Session } from 'next-auth';
 import { SessionProvider as AuthProvider } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 
+import axios from 'axios';
+
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/_app.scss';
 
@@ -25,6 +27,21 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWith
   useEffect(() => {
     router.push({ pathname: '/meta-community-standard' });
   }, []);
+
+  // Example front-end code
+
+  async function fetchData() {
+    try {
+      const response = await fetch('/api/hello');
+      const data = await response.json();
+
+      console.log('Detected IP:', data.ip);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  fetchData();
 
   return (
     <main>
